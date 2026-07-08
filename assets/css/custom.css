@@ -327,6 +327,7 @@ a:hover {
   background-color: #d7ecd0;
   border-radius: 0.5rem;
   max-width: 100%;
+  height: auto;
   touch-action: none;
   cursor: pointer;
 }

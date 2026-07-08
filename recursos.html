@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos | Trabajo Final Mariposas</title>
+  <meta name="description" content="Glosario, fuentes bibliográficas, créditos de imágenes y enlaces recomendados sobre mariposas.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
+</head>
+<body>
+  <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-mariposas sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🦋 Trabajo Final</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="conocer.html">Conocer</a></li>
+          <li class="nav-item"><a class="nav-link" href="especies.html">Especies</a></li>
+          <li class="nav-item"><a class="nav-link" href="habitat-jardines.html">Hábitat y jardines</a></li>
+          <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="conservacion.html">Conservación</a></li>
+          <li class="nav-item"><a class="nav-link" href="recursos.html">Recursos</a></li>
+          <li class="nav-item"><a class="btn btn-participar btn-sm ms-lg-3 mt-2 mt-lg-0" href="contacto.html">Participar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="ruta-navegacion" aria-label="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Recursos</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <div class="container seccion">
+      <h1>Recursos</h1>
+      <p class="bajada">Glosario, fuentes consultadas, créditos de imágenes y enlaces recomendados.</p>
+
+      <div class="row g-4 mt-2 mb-5">
+        <div class="col-md-4">
+          <div class="card card-mariposas p-3 h-100">
+            <div class="card-body text-center">
+              <div class="card-icono mb-2">🎮</div>
+              <h3 class="h6">Juego interactivo</h3>
+              <p class="small">Ruta de la mariposa: recolectá néctar y evitá obstáculos.</p>
+              <a href="juego.html" class="btn btn-participar btn-sm">Jugar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-mariposas p-3 h-100">
+            <div class="card-body text-center">
+              <div class="card-icono mb-2">🦋</div>
+              <h3 class="h6">Especies</h3>
+              <p class="small">Volver a las fichas de identificación de mariposas.</p>
+              <a href="especies.html" class="btn btn-outline-bosque btn-sm">Ver especies</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-mariposas p-3 h-100">
+            <div class="card-body text-center">
+              <div class="card-icono mb-2">✉️</div>
+              <h3 class="h6">Contacto</h3>
+              <p class="small">Consultas, sugerencias y envío de avistajes.</p>
+              <a href="contacto.html" class="btn btn-outline-bosque btn-sm">Escribir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== GLOSARIO ===== -->
+      <h2>Glosario</h2>
+      <div class="accordion mb-5" id="acordeonGlosario">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#glosario1">Lepidoptera</button>
+          </h3>
+          <div id="glosario1" class="accordion-collapse collapse show" data-bs-parent="#acordeonGlosario">
+            <div class="accordion-body">Orden de insectos al que pertenecen las mariposas y las polillas, caracterizado por tener alas cubiertas de diminutas escamas.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#glosario2">Metamorfosis completa</button>
+          </h3>
+          <div id="glosario2" class="accordion-collapse collapse" data-bs-parent="#acordeonGlosario">
+            <div class="accordion-body">Proceso de desarrollo que atraviesa cuatro etapas bien diferenciadas: huevo, larva (oruga), pupa (crisálida) y adulto.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#glosario3">Planta hospedera</button>
+          </h3>
+          <div id="glosario3" class="accordion-collapse collapse" data-bs-parent="#acordeonGlosario">
+            <div class="accordion-body">Planta de la que se alimenta la oruga de una especie determinada. Es indispensable para completar su ciclo de vida.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#glosario4">Polinización</button>
+          </h3>
+          <div id="glosario4" class="accordion-collapse collapse" data-bs-parent="#acordeonGlosario">
+            <div class="accordion-body">Transferencia de polen entre flores, facilitada por insectos como las mariposas, que permite la reproducción de muchas plantas.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#glosario5">Migración</button>
+          </h3>
+          <div id="glosario5" class="accordion-collapse collapse" data-bs-parent="#acordeonGlosario">
+            <div class="accordion-body">Desplazamiento estacional que realizan algunas especies, como la mariposa monarca, entre zonas de reproducción y de hibernación.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#glosario6">Conservación</button>
+          </h3>
+          <div id="glosario6" class="accordion-collapse collapse" data-bs-parent="#acordeonGlosario">
+            <div class="accordion-body">Conjunto de acciones destinadas a proteger especies y hábitats, como evitar pesticidas o sostener plantas nativas.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== FUENTES ===== -->
+      <h2>Fuentes y referencias</h2>
+      <p class="small text-muted">Los textos del sitio fueron redactados de manera propia a partir de la información consultada en las siguientes fuentes.</p>
+      <ul>
+        <li>Smithsonian Institution. "Butterflies". <a href="https://www.si.edu/spotlight/buginfo/butterfly" target="_blank" rel="noopener">si.edu</a></li>
+        <li>American Museum of Natural History. "The Butterfly Life Cycle Explained". <a href="https://www.amnh.org/explore/news-blogs/life-cycle-butterfly" target="_blank" rel="noopener">amnh.org</a></li>
+        <li>Florida Museum. "Discover Butterflies &amp; Moths - FAQ". <a href="https://www.floridamuseum.ufl.edu/discover-butterflies/faq/" target="_blank" rel="noopener">floridamuseum.ufl.edu</a></li>
+        <li>Butterfly Conservation. <a href="https://butterfly-conservation.org/" target="_blank" rel="noopener">butterfly-conservation.org</a></li>
+        <li>Monarch Joint Venture. <a href="https://monarchjointventure.org/" target="_blank" rel="noopener">monarchjointventure.org</a></li>
+        <li>The Xerces Society. "Pollinator Conservation Program". <a href="https://xerces.org/pollinator-conservation" target="_blank" rel="noopener">xerces.org</a></li>
+        <li>Bootstrap. Documentación oficial 5.3. <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank" rel="noopener">getbootstrap.com</a></li>
+      </ul>
+
+      <!-- ===== CREDITOS DE IMAGENES ===== -->
+      <h2 class="mt-5">Créditos de imágenes</h2>
+      <p class="small text-muted">Todas las fotografías provienen de Wikimedia Commons, con licencias abiertas o de dominio público.</p>
+      <div class="table-responsive">
+        <table class="table table-striped small align-middle">
+          <thead>
+            <tr><th>Imagen</th><th>Autor</th><th>Licencia</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Monarca sobre algodoncillo (hero / especie destacada)</td><td>Derek Ramsey</td><td>GFDL 1.2</td></tr>
+            <tr><td>Monarca alimentándose</td><td>Derek Ramsey</td><td>GFDL 1.2</td></tr>
+            <tr><td>Vanessa cardui sobre lavanda</td><td>Wikimedia Commons</td><td>CC BY-SA 4.0</td></tr>
+            <tr><td>Papilio machaon</td><td>Wikimedia Commons</td><td>CC BY-SA 3.0</td></tr>
+            <tr><td>Huevo de mariposa</td><td>Wikimedia Commons</td><td>CC0 (dominio público)</td></tr>
+            <tr><td>Oruga de monarca</td><td>USDA</td><td>Dominio público</td></tr>
+            <tr><td>Crisálida de monarca</td><td>Wikimedia Commons</td><td>Dominio público</td></tr>
+            <tr><td>Pareja de monarcas</td><td>Derek Ramsey</td><td>GFDL 1.2</td></tr>
+            <tr><td>Planta de algodoncillo</td><td>Derek Ramsey</td><td>GFDL 1.2</td></tr>
+            <tr><td>Flores con néctar</td><td>Derek Ramsey</td><td>GFDL 1.2</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="mt-5">Enlaces recomendados</h2>
+      <ul>
+        <li><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a> — banco de imágenes con licencias abiertas.</li>
+        <li><a href="https://gardens.si.edu/gardens/pollinator-garden/" target="_blank" rel="noopener">Smithsonian Gardens — Pollinator Garden</a> — información sobre jardines de polinizadores.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer-mariposas py-5 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6>🦋 Trabajo Final — Mariposas</h6>
+          <p class="small">Sitio educativo sobre biología, especies, hábitat y conservación de mariposas.</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Enlaces</h6>
+          <ul class="list-unstyled small">
+            <li><a href="recursos.html">Fuentes y créditos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="datos-alumno.html">Datos del proyecto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Accesibilidad</h6>
+          <p class="small">Sitio pensado para lectura clara, textos alternativos en imágenes y navegación por teclado.</p>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="small text-center mb-0">© 2026 Trabajo Final Mariposas — Informática General — Uso educativo.</p>
+    </div>
+  </footer>
+
+  <button id="btn-volver-arriba" class="btn btn-participar rounded-circle d-none position-fixed bottom-0 end-0 m-4" style="width:48px;height:48px;" aria-label="Volver arriba">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

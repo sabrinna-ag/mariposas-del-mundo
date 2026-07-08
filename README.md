@@ -1,6 +1,7 @@
 # Trabajo Final Mariposas
 
-Sitio web educativo sobre mariposas — Trabajo Práctico Final de Informática General.
+Sitio web educativo sobre mariposas — Trabajo Práctico Final de la materia Informática General,
+cursada en la Universidad Nacional de las Artes (UNA, 2025).
 
 ## Cómo ver el sitio
 

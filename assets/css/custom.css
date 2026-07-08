@@ -145,8 +145,13 @@ a:hover {
   border-radius: 0.75rem;
   box-shadow: 0 4px 14px rgba(43, 43, 43, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 100%;
 }
+
+/* La altura 100% solo se aplica cuando se agrega la utilidad .h-100 de
+   Bootstrap a proposito (tarjetas una al lado de la otra en una misma fila).
+   Si queda fija en la clase base, las tarjetas apiladas en una sola columna
+   (por ejemplo junto a una columna mas alta) se estiran de mas y su
+   contenido termina superponiendose con el contenido siguiente. */
 
 .card-mariposas:hover {
   transform: translateY(-4px);

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería | Trabajo Final Mariposas</title>
+  <meta name="description" content="Galería interactiva de fotografías de mariposas: adultos, orugas, crisálidas, huevos y plantas.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
+</head>
+<body>
+  <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-mariposas sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🦋 Trabajo Final</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="conocer.html">Conocer</a></li>
+          <li class="nav-item"><a class="nav-link" href="especies.html">Especies</a></li>
+          <li class="nav-item"><a class="nav-link" href="habitat-jardines.html">Hábitat y jardines</a></li>
+          <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="conservacion.html">Conservación</a></li>
+          <li class="nav-item"><a class="nav-link" href="recursos.html">Recursos</a></li>
+          <li class="nav-item"><a class="btn btn-participar btn-sm ms-lg-3 mt-2 mt-lg-0" href="contacto.html">Participar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="ruta-navegacion" aria-label="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Galería</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <div class="container seccion">
+      <h1>Galería de mariposas</h1>
+      <p class="bajada">
+        Explorá fotografías de distintas etapas del ciclo de vida, especies y plantas asociadas.
+        Usá los filtros para ver una categoría a la vez y hacé clic en cualquier imagen para
+        ampliarla.
+      </p>
+
+      <div class="filtro-galeria text-center my-4">
+        <button class="btn btn-outline-bosque activo" data-categoria="todas">Todas</button>
+        <button class="btn btn-outline-bosque" data-categoria="adultos">Adultos</button>
+        <button class="btn btn-outline-bosque" data-categoria="huevos">Huevos</button>
+        <button class="btn btn-outline-bosque" data-categoria="orugas">Orugas</button>
+        <button class="btn btn-outline-bosque" data-categoria="crisalidas">Crisálidas</button>
+        <button class="btn btn-outline-bosque" data-categoria="plantas">Plantas y hábitat</button>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="item-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="adultos"
+               data-titulo="Mariposa monarca sobre algodoncillo"
+               data-descripcion="Mariposa monarca adulta alimentándose de néctar sobre flores de algodoncillo."
+               data-credito="Foto: Derek Ramsey — Wikimedia Commons (GFDL 1.2)">
+            <img src="assets/img/especies/monarca-hero.jpg" alt="Mariposa monarca sobre flor de algodoncillo">
+            <span class="etiqueta-categoria">Adultos</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="item-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="adultos"
+               data-titulo="Mariposa monarca alimentándose"
+               data-descripcion="Detalle de una mariposa monarca desplegando su espiritrompa sobre una flor."
+               data-credito="Foto: Derek Ramsey — Wikimedia Commons (GFDL 1.2)">
+            <img src="assets/img/especies/monarca-alimentandose.jpg" alt="Mariposa monarca alimentándose de néctar">
+            <span class="etiqueta-categoria">Adultos</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="item-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="adultos"
+               data-titulo="Vanessa cardui sobre lavanda"
+               data-descripcion="Mariposa dama pintada (Vanessa cardui) posada sobre una flor de lavanda."
+               data-credito="Foto: Wikimedia Commons (CC BY-SA 4.0)">
+            <img src="assets/img/especies/vanessa-cardui-lavanda.jpg" alt="Mariposa Vanessa cardui sobre lavanda">
+            <span class="etiqueta-categoria">Adultos</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="item-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="adultos"
+               data-titulo="Papilio machaon"
+               data-descripcion="Mariposa macaón (Papilio machaon) con sus característicos colores amarillo y negro."
+               data-credito="Foto: Wikimedia Commons (CC BY-SA 3.0)">
+            <img src="assets/img/especies/papilio-machaon.jpg" alt="Mariposa Papilio machaon">
+            <span class="etiqueta-categoria">Adultos</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="item-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="adultos"
+               data-titulo="Pareja de mariposas monarca"
+               data-descripcion="Dos mariposas monarca adultas posadas sobre vegetación."
+               data-credito="Foto: Derek Ramsey — Wikimedia Commons (GFDL 1.2)">
+            <img src="assets/img/galeria/monarca-adulto.jpg" alt="Pareja de mariposas monarca">
+            <span class="etiqueta-categoria">Adultos</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="item-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="huevos"
+               data-titulo="Huevo de mariposa"
+               data-descripcion="Huevo de mariposa monarca depositado sobre una hoja de planta hospedera."
+               data-credito="Foto: Wikimedia Commons (CC0)">
+            <img src="assets/img/galeria/huevo-mariposa.jpg" alt="Huevo de mariposa sobre una hoja">
+            <span class="etiqueta-categoria">Huevos</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="item-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="orugas"
+               data-titulo="Oruga de mariposa monarca"
+               data-descripcion="Oruga de monarca alimentándose de una hoja de algodoncillo."
+               data-credito="Foto: USDA — Wikimedia Commons (dominio público)">
+            <img src="assets/img/galeria/oruga-monarca.jpg" alt="Oruga de mariposa monarca comiendo una hoja">
+            <span class="etiqueta-categoria">Orugas</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="item-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="crisalidas"
+               data-titulo="Crisálida de mariposa monarca"
+               data-descripcion="Crisálida de monarca en la que ocurre la transformación hacia la etapa adulta."
+               data-credito="Foto: Wikimedia Commons (dominio público)">
+            <img src="assets/img/galeria/crisalida-monarca.jpg" alt="Crisálida de mariposa monarca">
+            <span class="etiqueta-categoria">Crisálidas</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="item-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="plantas"
+               data-titulo="Planta de algodoncillo"
+               data-descripcion="Algodoncillo (Asclepias syriaca), planta hospedera de la mariposa monarca."
+               data-credito="Foto: Derek Ramsey — Wikimedia Commons (GFDL 1.2)">
+            <img src="assets/img/galeria/planta-algodoncillo.jpg" alt="Planta de algodoncillo">
+            <span class="etiqueta-categoria">Plantas y hábitat</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="item-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="plantas"
+               data-titulo="Flores con néctar"
+               data-descripcion="Flores de algodoncillo de pantano (Asclepias incarnata), fuente de néctar para mariposas."
+               data-credito="Foto: Derek Ramsey — Wikimedia Commons (GFDL 1.2)">
+            <img src="assets/img/galeria/flores-nectar.jpg" alt="Flores utilizadas como fuente de néctar">
+            <span class="etiqueta-categoria">Plantas y hábitat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de vista ampliada -->
+  <div class="modal fade" id="modalGaleria" tabindex="-1" aria-labelledby="modalGaleriaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="modal-titulo-imagen">Título</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modal-imagen-ampliada" src="" alt="" class="img-fluid rounded-3 mb-3">
+          <p id="modal-descripcion-imagen" class="mb-1"></p>
+          <p id="modal-credito-imagen" class="credito-imagen"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-mariposas py-5 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6>🦋 Trabajo Final — Mariposas</h6>
+          <p class="small">Sitio educativo sobre biología, especies, hábitat y conservación de mariposas.</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Enlaces</h6>
+          <ul class="list-unstyled small">
+            <li><a href="recursos.html">Fuentes y créditos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="datos-alumno.html">Datos del proyecto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Accesibilidad</h6>
+          <p class="small">Sitio pensado para lectura clara, textos alternativos en imágenes y navegación por teclado.</p>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="small text-center mb-0">© 2026 Trabajo Final Mariposas — Informática General — Uso educativo.</p>
+    </div>
+  </footer>
+
+  <button id="btn-volver-arriba" class="btn btn-participar rounded-circle d-none position-fixed bottom-0 end-0 m-4" style="width:48px;height:48px;" aria-label="Volver arriba">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>

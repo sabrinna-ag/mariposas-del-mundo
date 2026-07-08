@@ -208,7 +208,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var ahora = Date.now();
     if (ahora < mariposaInvulnerableHasta) return;
 
-    obstaculos.forEach(function (obstaculo) {
+    // Se usa un for con "break" (en vez de forEach) para que, si hay varios
+    // obstaculos superpuestos en el mismo frame, solo se descuente una vida.
+    for (var i = 0; i < obstaculos.length; i++) {
+      var obstaculo = obstaculos[i];
       if (distancia(mariposa, obstaculo) < mariposa.radio + obstaculo.radio) {
         vidas -= 1;
         mariposaInvulnerableHasta = ahora + 1200;
@@ -216,8 +219,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (vidas <= 0) {
           finalizarJuego();
         }
+        break;
       }
-    });
+    }
   }
 
   function revisarSubidaDeNivel() {

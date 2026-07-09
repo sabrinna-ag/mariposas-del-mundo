@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Cada subpagina pertenece a una seccion principal del menu. Se usa este
 // mapa para que, por ejemplo, estando en "ciclo-de-vida.html" se resalte
 // el enlace "Conocer" (y no se quede el menu sin ningun item marcado).
-let SECCION_DE_LA_PAGINA = {
+const SECCION_DE_LA_PAGINA = {
   "conocer.html": "conocer.html",
   "ciclo-de-vida.html": "conocer.html",
   "anatomia.html": "conocer.html",
@@ -30,12 +30,12 @@ let SECCION_DE_LA_PAGINA = {
 // Recorre los enlaces del navbar y le agrega la clase "active" al que
 // corresponda con la seccion de la pagina actual (aunque sea una subpagina).
 function marcarEnlaceActivo() {
-  let paginaActual = window.location.pathname.split("/").pop() || "index.html";
-  let seccionActual = SECCION_DE_LA_PAGINA[paginaActual] || paginaActual;
-  let enlaces = document.querySelectorAll(".navbar-mariposas .nav-link");
+  const paginaActual = window.location.pathname.split("/").pop() || "index.html";
+  const seccionActual = SECCION_DE_LA_PAGINA[paginaActual] || paginaActual;
+  const enlaces = document.querySelectorAll(".navbar-mariposas .nav-link");
 
   enlaces.forEach(function (enlace) {
-    let destino = enlace.getAttribute("href");
+    const destino = enlace.getAttribute("href");
     if (destino === seccionActual) {
       enlace.classList.add("active");
     }
@@ -45,7 +45,7 @@ function marcarEnlaceActivo() {
 // Muestra un boton flotante para volver al inicio de la pagina
 // cuando el usuario baja mas de 400px.
 function activarBotonVolverArriba() {
-  let boton = document.getElementById("btn-volver-arriba");
+  const boton = document.getElementById("btn-volver-arriba");
   if (!boton) return;
 
   window.addEventListener("scroll", function () {
@@ -65,14 +65,14 @@ function activarBotonVolverArriba() {
 // se lo vuelve a tocar. Esto cierra el menu automaticamente al elegir un
 // enlace, para que la navegacion se sienta mas fluida.
 function cerrarMenuMovilAlNavegar() {
-  let menu = document.getElementById("navbarPrincipal");
+  const menu = document.getElementById("navbarPrincipal");
   if (!menu) return;
 
-  let enlaces = menu.querySelectorAll("a");
+  const enlaces = menu.querySelectorAll("a");
   enlaces.forEach(function (enlace) {
     enlace.addEventListener("click", function () {
       if (menu.classList.contains("show")) {
-        let menuBootstrap = bootstrap.Collapse.getOrCreateInstance(menu);
+        const menuBootstrap = bootstrap.Collapse.getOrCreateInstance(menu);
         menuBootstrap.hide();
       }
     });

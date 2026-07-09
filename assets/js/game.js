@@ -6,19 +6,22 @@
 // prompts, correcciones y pruebas esta documentado en registro-desarrollo.md
 
 document.addEventListener("DOMContentLoaded", function () {
-  let canvas = document.getElementById("canvas-juego");
+  const canvas = document.getElementById("canvas-juego");
   if (!canvas) return;
-  let contexto = canvas.getContext("2d");
+  const contexto = canvas.getContext("2d");
 
-  let ANCHO = canvas.width;
-  let ALTO = canvas.height;
+  const ANCHO = canvas.width;
+  const ALTO = canvas.height;
 
   // ---------- Estado general del juego ----------
+  // Estas variables cambian durante la partida, por eso son "let" y no "const".
   let estadoJuego = "inicio"; // "inicio" | "jugando" | "fin"
   let idAnimacion = null;
 
-  let mariposa = { x: ANCHO / 2, y: ALTO / 2, radio: 16, velocidad: 4.2 };
-  let teclas = { arriba: false, abajo: false, izquierda: false, derecha: false };
+  // El objeto en si nunca se reemplaza (solo se modifican sus propiedades
+  // x/y), por eso puede ser "const".
+  const mariposa = { x: ANCHO / 2, y: ALTO / 2, radio: 16, velocidad: 4.2 };
+  const teclas = { arriba: false, abajo: false, izquierda: false, derecha: false };
 
   let flores = [];
   let obstaculos = [];
@@ -26,12 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let puntaje = 0;
   let vidas = 3;
   let nivel = 1;
-  let puntosParaSubirNivel = 60;
+  const puntosParaSubirNivel = 60;
   let contadorObstaculos = 0;
   let frecuenciaObstaculos = 90; // cada cuantos frames aparece un obstaculo nuevo
   let mariposaInvulnerableHasta = 0;
 
-  let mensajesEducativos = [
+  const mensajesEducativos = [
     "Las mariposas polinizan flores mientras se alimentan de nectar.",
     "Evitar el uso de pesticidas ayuda a proteger a las mariposas.",
     "Plantar flores nativas atrae mariposas y otros polinizadores.",
@@ -39,15 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   // ---------- Elementos de la interfaz ----------
-  let elementoPuntaje = document.getElementById("juego-puntaje");
-  let elementoVidas = document.getElementById("juego-vidas");
-  let elementoNivel = document.getElementById("juego-nivel");
-  let pantallaInicio = document.getElementById("pantalla-inicio-juego");
-  let pantallaFin = document.getElementById("pantalla-fin-juego");
-  let textoResultadoFinal = document.getElementById("resultado-final-juego");
-  let textoMensajeEducativo = document.getElementById("mensaje-educativo-juego");
-  let botonComenzar = document.getElementById("btn-comenzar-juego");
-  let botonReiniciar = document.getElementById("btn-reiniciar-juego");
+  const elementoPuntaje = document.getElementById("juego-puntaje");
+  const elementoVidas = document.getElementById("juego-vidas");
+  const elementoNivel = document.getElementById("juego-nivel");
+  const pantallaInicio = document.getElementById("pantalla-inicio-juego");
+  const pantallaFin = document.getElementById("pantalla-fin-juego");
+  const textoResultadoFinal = document.getElementById("resultado-final-juego");
+  const textoMensajeEducativo = document.getElementById("mensaje-educativo-juego");
+  const botonComenzar = document.getElementById("btn-comenzar-juego");
+  const botonReiniciar = document.getElementById("btn-reiniciar-juego");
 
   botonComenzar.addEventListener("click", comenzarJuego);
   botonReiniciar.addEventListener("click", comenzarJuego);
@@ -74,10 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
   configurarBotonTactil("btn-derecha", "derecha");
 
   function configurarBotonTactil(idBoton, direccion) {
-    let boton = document.getElementById(idBoton);
+    const boton = document.getElementById(idBoton);
     if (!boton) return;
-    let activar = function (evento) { evento.preventDefault(); teclas[direccion] = true; };
-    let desactivar = function (evento) { evento.preventDefault(); teclas[direccion] = false; };
+    const activar = function (evento) { evento.preventDefault(); teclas[direccion] = true; };
+    const desactivar = function (evento) { evento.preventDefault(); teclas[direccion] = false; };
     boton.addEventListener("touchstart", activar);
     boton.addEventListener("touchend", desactivar);
     boton.addEventListener("mousedown", activar);
@@ -158,9 +161,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function crearObstaculo() {
-    let tipo = Math.random() < 0.5 ? "pesticida" : "viento";
-    let desdeIzquierda = Math.random() < 0.5;
-    let velocidadBase = 1.6 + nivel * 0.5;
+    const tipo = Math.random() < 0.5 ? "pesticida" : "viento";
+    const desdeIzquierda = Math.random() < 0.5;
+    const velocidadBase = 1.6 + nivel * 0.5;
 
     return {
       tipo: tipo,
@@ -189,8 +192,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function distancia(objetoA, objetoB) {
-    let dx = objetoA.x - objetoB.x;
-    let dy = objetoA.y - objetoB.y;
+    const dx = objetoA.x - objetoB.x;
+    const dy = objetoA.y - objetoB.y;
     return Math.sqrt(dx * dx + dy * dy);
   }
 
@@ -205,13 +208,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function revisarColisionesConObstaculos() {
-    let ahora = Date.now();
+    const ahora = Date.now();
     if (ahora < mariposaInvulnerableHasta) return;
 
     // Se usa un for con "break" (en vez de forEach) para que, si hay varios
     // obstaculos superpuestos en el mismo frame, solo se descuente una vida.
     for (let i = 0; i < obstaculos.length; i++) {
-      let obstaculo = obstaculos[i];
+      const obstaculo = obstaculos[i];
       if (distancia(mariposa, obstaculo) < mariposa.radio + obstaculo.radio) {
         vidas -= 1;
         mariposaInvulnerableHasta = ahora + 1200;
@@ -240,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     textoResultadoFinal.textContent =
       "Puntaje final: " + puntaje + " | Nivel alcanzado: " + nivel;
-    let mensaje = mensajesEducativos[Math.floor(Math.random() * mensajesEducativos.length)];
+    const mensaje = mensajesEducativos[Math.floor(Math.random() * mensajesEducativos.length)];
     textoMensajeEducativo.textContent = mensaje;
     pantallaFin.classList.remove("d-none");
   }
@@ -286,8 +289,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function dibujarMariposa() {
-    let ahora = Date.now();
-    let parpadea = ahora < mariposaInvulnerableHasta && Math.floor(ahora / 100) % 2 === 0;
+    const ahora = Date.now();
+    const parpadea = ahora < mariposaInvulnerableHasta && Math.floor(ahora / 100) % 2 === 0;
     if (parpadea) return;
 
     contexto.save();

@@ -99,6 +99,36 @@ a:hover {
   color: var(--blanco);
 }
 
+/* ---------- Imagenes de contenido ---------- */
+/* Algunas fotos de origen son verticales (retrato). Con solo img-fluid,
+   la altura sigue el alto original y en columnas angostas terminan
+   ocupando demasiado espacio. Estas clases limitan la altura maxima y
+   recortan prolijamente con object-fit, sin perder el ancho responsive. */
+.img-contenido {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+.img-vista-previa {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.img-modal-ampliada {
+  max-height: 65vh;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 767.98px) {
+  .img-contenido {
+    max-height: 280px;
+  }
+}
+
 /* ---------- Migas de pan ---------- */
 .ruta-navegacion {
   font-size: 0.9rem;

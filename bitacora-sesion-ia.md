@@ -173,6 +173,36 @@ puntos que se consigan), se hizo la reestructuración completa:
 
 ---
 
+## 9. Copia de la conversación
+
+La alumna pidió una copia completa de la conversación con la IA. Se consultó qué formato
+prefería (resumen, página para compartir, o transcripción literal) y se optó por una
+**transcripción literal completa**, organizada por turnos numerados con índice, en un archivo
+HTML pensado para leerse en pantalla o imprimirse a PDF (`transcripcion-conversacion.html`, en
+la raíz del proyecto). Ese archivo es solo un documento de respaldo: no forma parte de la
+navegación del sitio ni está enlazado desde ninguna página (se confirmó explícitamente que no
+debía estarlo).
+
+## 10. Unidades de medida: conversión a `em`
+
+La alumna pidió pasar las unidades de medida de `custom.css` a `em`, su unidad de preferencia
+para trabajar.
+
+**Criterio aplicado:** se convirtieron todos los valores en `px` y `rem` a `em`, usando como
+base 16px = 1em (el tamaño de letra por defecto del navegador, el mismo que ya usaba `body`).
+Quedaron **sin convertir** los porcentajes (`%`) y las unidades de viewport (`vh`), porque miden
+otra cosa —una proporción del contenedor o de la pantalla, no del tamaño de letra— y no
+equivalen a `em`; convertirlas habría cambiado el comportamiento real de esas reglas (por
+ejemplo, el alto del hero dejaría de ajustarse a la pantalla). También se convirtieron los
+valores de los `@media` (breakpoints), ya que `em` en una media query siempre se calcula sobre
+el tamaño de letra por defecto del navegador, sin importar los estilos de la página, así que la
+conversión es segura y no cambia en qué ancho se activa cada regla.
+
+Se dejó cada valor con un comentario al lado indicando el equivalente original en píxeles
+(ej. `max-height: 23.75em; /* 380px */`) para que sea fácil de auditar.
+
+---
+
 ## Cómo usar esta bitácora
 
 Este documento está pensado como respaldo del proceso de trabajo con IA durante todo el

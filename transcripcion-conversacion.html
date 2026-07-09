@@ -362,6 +362,8 @@
       <li><a href="#t12">Reestructuración en carpetas por sección y commit final</a></li>
       <li><a href="#t13">Pedido de copia de la conversación</a></li>
       <li><a href="#t14">Formato final: transcripción literal para PDF</a></li>
+      <li><a href="#t15">¿La transcripción forma parte del sitio?</a></li>
+      <li><a href="#t16">Unidades de medida: conversión a em</a></li>
     </ol>
   </div>
 
@@ -838,6 +840,55 @@
       <p>Este mismo documento es la respuesta a ese pedido: la transcripción literal completa de
       la sesión, organizada por turnos numerados con índice, pensada para leerse cómodamente en
       pantalla o imprimirse a PDF desde el navegador (<code>Ctrl+P</code> → Guardar como PDF).</p>
+    </div>
+  </div>
+
+  <!-- ============ TURNO 15 ============ -->
+  <div class="turno" id="t15">
+    <div class="separador-fase"><span>Fase 8 — Ajustes posteriores</span><div class="linea"></div></div>
+    <div class="turno-cabecera">
+      <span class="turno-numero">TURNO 15</span>
+      <span class="turno-titulo">¿La transcripción forma parte del sitio?</span>
+    </div>
+    <div class="intercambio usuario">
+      <div class="quien">Usuaria</div>
+      <p>transcripcion-conversacion.html esta incluido en el sitio web? o unicamente entre los
+      archivos?</p>
+    </div>
+    <div class="intercambio claude">
+      <div class="quien">Claude</div>
+      <p>Únicamente entre los archivos — no está incluido en el sitio web navegable. Confirmé
+      que ningún link del menú, footer, ni ninguna de las 16 páginas apunta a
+      <code>transcripcion-conversacion.html</code>. Está en la raíz del repositorio junto a
+      <code>index.html</code>, pero no forma parte de la estructura de páginas del sitio (no
+      cuenta para el mínimo de 15/16 archivos HTML que pide la consigna, ni es alcanzable
+      navegando el sitio publicado). Es intencional: es documentación del proceso, pensada para
+      vos, no contenido pensado para que un visitante del sitio la encuentre navegando.</p>
+    </div>
+  </div>
+
+  <!-- ============ TURNO 16 ============ -->
+  <div class="turno" id="t16">
+    <div class="turno-cabecera">
+      <span class="turno-numero">TURNO 16</span>
+      <span class="turno-titulo">Unidades de medida: conversión a em</span>
+    </div>
+    <div class="intercambio usuario">
+      <div class="quien">Usuaria</div>
+      <p>No! Asi esta bien. Te pido que pases las unidades de medida que puedas a EM dentro del
+      CSS, que son mi unidad de preferencia para trabajar. Actualiza los archivos necesarios con
+      respecto a estos cambios (en el historial y transcripcion, para actualizar los
+      seguimientos que hicimos) y realiza otro commit.</p>
+    </div>
+    <div class="nota-trabajo">
+      Claude convirtió todos los valores en <code>px</code> y <code>rem</code> de
+      <code>custom.css</code> a <code>em</code> (base 16px = 1em), incluyendo los breakpoints de
+      los <code>@media</code>. Dejó sin convertir los porcentajes (<code>%</code>) y las
+      unidades de viewport (<code>vh</code>), porque miden una proporción del contenedor o de la
+      pantalla, no del tamaño de letra, y no equivalen a <code>em</code>. Cada valor quedó con
+      un comentario al lado indicando el equivalente original en píxeles, para que sea fácil de
+      auditar. Se actualizaron <code>bitacora-sesion-ia.md</code> y esta misma transcripción
+      para dejar registro del cambio, y se hizo un nuevo commit.
     </div>
   </div>
 

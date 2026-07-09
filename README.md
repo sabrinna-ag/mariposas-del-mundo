@@ -1,4 +1,4 @@
-# Trabajo Final Mariposas
+# Mariposas del Mundo
 
 Sitio web educativo sobre mariposas — Trabajo Práctico Final de la materia Informática General,
 cursada en la Universidad Nacional de las Artes (UNA, 2025).
@@ -16,8 +16,11 @@ es un sitio estático hecho con HTML, CSS y JavaScript.
 
 ## Estructura
 
-16 páginas HTML (home, 6 secciones principales, 6 subpáginas, 2 páginas complementarias y el
-juego), organizadas junto a `assets/css`, `assets/js` y `assets/img`. Más detalle en
+Home (`index.html`) + 6 secciones principales, cada una en su propia carpeta con su propio
+`index.html` (`conocer/`, `especies/`, `habitat-jardines/`, `galeria/`, `conservacion/`,
+`recursos/`), con sus subpáginas dentro de esa misma carpeta. Más 2 páginas complementarias en
+la raíz (`contacto.html`, `datos-alumno.html`) y el juego (`recursos/juego.html`). Todo junto a
+`assets/css`, `assets/js` y `assets/img`. Más detalle en
 [registro-desarrollo.md](registro-desarrollo.md).
 
 ## Documentación del proyecto
@@ -26,6 +29,8 @@ juego), organizadas junto a `assets/css`, `assets/js` y `assets/img`. Más detal
 - **Informe de proyecto** (investigación, mapa de navegación, layout y diseño):
   `Trabajo_Final_Mariposas_Informe_Proyecto_ACTUALIZADO.docx`
 - **Registro de desarrollo y testeo** (incluye proceso de IA para el juego): `registro-desarrollo.md`
+- **Bitácora de la sesión de trabajo con IA** (proceso completo de construcción del sitio,
+  bugs encontrados y corregidos, decisiones tomadas): `bitacora-sesion-ia.md`
 
 ## Publicación online
 

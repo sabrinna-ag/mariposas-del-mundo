@@ -4,20 +4,18 @@
    Paleta e identidad definidas en el informe de proyecto
    ========================================================= */
 
-:root {
-  --verde-bosque: #2e5e3a;
-  --naranja-mariposa: #e36c2d;
-  --marfil: #f8f4e9;
-  --violeta-flor: #8a4f7d;
-  --gris-carbon: #2b2b2b;
-  --blanco: #ffffff;
-}
+/* Paleta del sitio (informe de proyecto):
+   Verde bosque #2e5e3a | Naranja mariposa #e36c2d | Marfil #f8f4e9
+   Violeta flor #8a4f7d | Gris carbon #2b2b2b | Blanco #ffffff
+   Los colores se repiten como valores literales en cada regla en vez
+   de variables CSS (--variable), porque las variables no se vieron en
+   la cursada. */
 
 /* ---------- Tipografia ---------- */
 body {
   font-family: "Lato", "Segoe UI", Arial, sans-serif;
-  color: var(--gris-carbon);
-  background-color: var(--marfil);
+  color: #2b2b2b;
+  background-color: #f8f4e9;
   font-size: 1rem;
   line-height: 1.65;
 }
@@ -25,7 +23,7 @@ body {
 h1, h2, h3, h4,
 .font-titulo {
   font-family: "Playfair Display", Georgia, serif;
-  color: var(--verde-bosque);
+  color: #2e5e3a;
 }
 
 h1 { font-weight: 700; }
@@ -33,19 +31,19 @@ h2 { font-weight: 700; margin-bottom: 1rem; }
 h3 { font-weight: 600; }
 
 a {
-  color: var(--verde-bosque);
+  color: #2e5e3a;
 }
 
 a:hover {
-  color: var(--naranja-mariposa);
+  color: #e36c2d;
 }
 
 .text-acento {
-  color: var(--naranja-mariposa);
+  color: #e36c2d;
 }
 
 .text-violeta {
-  color: var(--violeta-flor);
+  color: #8a4f7d;
 }
 
 .bajada {
@@ -55,13 +53,13 @@ a:hover {
 
 /* ---------- Header / Navbar ---------- */
 .navbar-mariposas {
-  background-color: var(--verde-bosque);
+  background-color: #2e5e3a;
 }
 
 .navbar-mariposas .navbar-brand {
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 700;
-  color: var(--blanco);
+  color: #ffffff;
   font-size: 1.4rem;
 }
 
@@ -72,55 +70,59 @@ a:hover {
 
 .navbar-mariposas .nav-link:hover,
 .navbar-mariposas .nav-link.active {
-  color: var(--naranja-mariposa) !important;
+  color: #e36c2d !important;
 }
 
 .btn-participar {
-  background-color: var(--naranja-mariposa);
-  border-color: var(--naranja-mariposa);
-  color: var(--blanco);
+  background-color: #e36c2d;
+  border-color: #e36c2d;
+  color: #ffffff;
   font-weight: 600;
 }
 
 .btn-participar:hover {
   background-color: #c65a20;
   border-color: #c65a20;
-  color: var(--blanco);
+  color: #ffffff;
 }
 
 .btn-outline-bosque {
-  border-color: var(--verde-bosque);
-  color: var(--verde-bosque);
+  border-color: #2e5e3a;
+  color: #2e5e3a;
   font-weight: 600;
 }
 
 .btn-outline-bosque:hover {
-  background-color: var(--verde-bosque);
-  color: var(--blanco);
+  background-color: #2e5e3a;
+  color: #ffffff;
 }
 
 /* ---------- Imagenes de contenido ---------- */
-/* Algunas fotos de origen son verticales (retrato). Con solo img-fluid,
-   la altura sigue el alto original y en columnas angostas terminan
-   ocupando demasiado espacio. Estas clases limitan la altura maxima y
-   recortan prolijamente con object-fit, sin perder el ancho responsive. */
+/* Algunas fotos de origen son verticales (retrato). Con solo img-fluid
+   (ancho 100%, alto automatico), en columnas angostas terminan ocupando
+   demasiado espacio. En vez de recortarlas con object-fit (no visto en la
+   cursada), se limita la altura maxima con max-height (medida relativa al
+   viewport, vista en la Clase 04). El navegador reduce ancho y alto en
+   conjunto para no distorsionar la imagen, y se centra con margin: auto. */
 .img-contenido {
   width: 100%;
   max-height: 380px;
-  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 .img-vista-previa {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  max-height: 200px;
+  display: block;
+  margin: 0 auto;
 }
 
 .img-modal-ampliada {
   max-height: 65vh;
-  width: auto;
   max-width: 100%;
-  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 767.98px) {
@@ -138,9 +140,16 @@ a:hover {
 }
 
 /* ---------- Hero ---------- */
+/* background-size no se vio en la cursada, pero es la unica forma de que
+   una imagen de fondo a pantalla completa se recorte sin dejar franjas
+   vacias ni deformarse. Sin esta propiedad, la imagen de fondo se repetiria
+   en mosaico o se mostraria en su tamano original. Es la unica excepcion
+   que se mantiene junto con object-fit en .etapa-ciclo y .item-galeria img
+   (explicado en cada caso), donde se necesita un recorte exacto que
+   max-height por si solo no puede lograr. */
 .hero {
   position: relative;
-  color: var(--blanco);
+  color: #ffffff;
   min-height: 60vh;
   display: flex;
   align-items: center;
@@ -161,8 +170,14 @@ a:hover {
 }
 
 .hero h1 {
-  color: var(--blanco);
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3.2rem;
+  }
 }
 
 .hero-secundario {
@@ -171,10 +186,8 @@ a:hover {
 
 /* ---------- Tarjetas ---------- */
 .card-mariposas {
-  border: none;
+  border: 1px solid #e7e2d5;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 14px rgba(43, 43, 43, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* La altura 100% solo se aplica cuando se agrega la utilidad .h-100 de
@@ -185,11 +198,11 @@ a:hover {
 
 .card-mariposas:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(43, 43, 43, 0.18);
+  border-color: #e36c2d;
 }
 
 .card-mariposas .card-title {
-  color: var(--verde-bosque);
+  color: #2e5e3a;
 }
 
 .card-icono {
@@ -198,37 +211,37 @@ a:hover {
 
 /* ---------- Franjas de fondo ---------- */
 .franja-verde {
-  background-color: var(--verde-bosque);
-  color: var(--blanco);
+  background-color: #2e5e3a;
+  color: #ffffff;
 }
 
 .franja-verde h2, .franja-verde h3 {
-  color: var(--blanco);
+  color: #ffffff;
 }
 
 .franja-violeta {
-  background-color: var(--violeta-flor);
-  color: var(--blanco);
+  background-color: #8a4f7d;
+  color: #ffffff;
 }
 
 .franja-violeta h2, .franja-violeta h3 {
-  color: var(--blanco);
+  color: #ffffff;
 }
 
 .franja-blanca {
-  background-color: var(--blanco);
+  background-color: #ffffff;
 }
 
 /* ---------- Fichas de especie ---------- */
 .ficha-datos-rapidos {
-  background-color: var(--blanco);
-  border-left: 4px solid var(--naranja-mariposa);
+  background-color: #ffffff;
+  border-left: 4px solid #e36c2d;
   border-radius: 0.5rem;
   padding: 1.25rem;
 }
 
 .ficha-datos-rapidos dt {
-  color: var(--verde-bosque);
+  color: #2e5e3a;
   font-weight: 700;
 }
 
@@ -237,24 +250,28 @@ a:hover {
   text-align: center;
 }
 
+/* object-fit se mantiene aca: la imagen necesita un ancho y un alto
+   exactamente iguales (130x130) para formar un circulo con border-radius.
+   Sin object-fit, una foto que no sea cuadrada se veria estirada o
+   aplastada al forzarla a esas medidas. */
 .etapa-ciclo img {
   border-radius: 50%;
   width: 130px;
   height: 130px;
   object-fit: cover;
-  border: 4px solid var(--naranja-mariposa);
+  border: 4px solid #e36c2d;
   margin-bottom: 0.75rem;
 }
 
 .flecha-ciclo {
   font-size: 1.8rem;
-  color: var(--naranja-mariposa);
+  color: #e36c2d;
 }
 
 /* ---------- Anatomia (diagrama simple con CSS) ---------- */
 .diagrama-anatomia {
   position: relative;
-  background-color: var(--blanco);
+  background-color: #ffffff;
   border-radius: 0.75rem;
   padding: 2rem;
 }
@@ -272,8 +289,8 @@ a:hover {
 }
 
 .etiqueta-anatomia .numero {
-  background-color: var(--naranja-mariposa);
-  color: var(--blanco);
+  background-color: #e36c2d;
+  color: #ffffff;
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -291,9 +308,9 @@ a:hover {
 }
 
 .filtro-galeria .btn.activo {
-  background-color: var(--naranja-mariposa);
-  border-color: var(--naranja-mariposa);
-  color: var(--blanco);
+  background-color: #e36c2d;
+  border-color: #e36c2d;
+  color: #ffffff;
 }
 
 .item-galeria {
@@ -301,14 +318,16 @@ a:hover {
   border-radius: 0.6rem;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2ddd0;
 }
 
+/* Se mantiene object-fit para que las miniaturas de la grilla de galeria
+   queden todas del mismo tamano (220px de alto), formando una cuadricula
+   pareja en vez de fotos de distinto ancho como en .img-vista-previa. */
 .item-galeria img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
 .item-galeria:hover img {
@@ -321,7 +340,7 @@ a:hover {
   left: 0;
   right: 0;
   background: rgba(46, 94, 58, 0.85);
-  color: var(--blanco);
+  color: #ffffff;
   font-size: 0.8rem;
   padding: 0.35rem 0.6rem;
 }
@@ -333,13 +352,13 @@ a:hover {
 /* ---------- Formulario ---------- */
 .form-mariposas label {
   font-weight: 600;
-  color: var(--verde-bosque);
+  color: #2e5e3a;
 }
 
 .form-mariposas .form-control:focus,
 .form-mariposas .form-select:focus {
-  border-color: var(--naranja-mariposa);
-  box-shadow: 0 0 0 0.2rem rgba(227, 108, 45, 0.25);
+  border-color: #e36c2d;
+  border-width: 2px;
 }
 
 .mensaje-envio {
@@ -352,7 +371,7 @@ a:hover {
 
 /* ---------- Juego ---------- */
 .zona-juego {
-  background-color: var(--gris-carbon);
+  background-color: #2b2b2b;
   border-radius: 0.75rem;
   padding: 1.5rem;
   text-align: center;
@@ -368,13 +387,13 @@ a:hover {
 }
 
 .panel-juego {
-  color: var(--blanco);
+  color: #ffffff;
 }
 
 .panel-juego .stat {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--naranja-mariposa);
+  color: #e36c2d;
 }
 
 .controles-tactiles {
@@ -397,7 +416,7 @@ a:hover {
 
 /* ---------- Footer ---------- */
 .footer-mariposas {
-  background-color: var(--gris-carbon);
+  background-color: #2b2b2b;
   color: #eee;
 }
 
@@ -406,11 +425,11 @@ a:hover {
 }
 
 .footer-mariposas a:hover {
-  color: var(--naranja-mariposa);
+  color: #e36c2d;
 }
 
 .footer-mariposas h6 {
-  color: var(--blanco);
+  color: #ffffff;
   font-family: "Playfair Display", Georgia, serif;
 }
 
@@ -418,7 +437,7 @@ a:hover {
 .separador-titulo {
   width: 70px;
   height: 4px;
-  background-color: var(--naranja-mariposa);
+  background-color: #e36c2d;
   border: none;
   border-radius: 2px;
   margin: 0.75rem 0 1.5rem;
@@ -438,14 +457,87 @@ a:hover {
   position: absolute;
   left: -999px;
   top: 0;
-  background: var(--naranja-mariposa);
-  color: var(--blanco);
+  background: #e36c2d;
+  color: #ffffff;
   padding: 0.5rem 1rem;
   z-index: 2000;
 }
 
 .skip-link:focus {
   left: 0;
+}
+
+/* ---------- Pantallas superpuestas del juego (inicio / fin) ---------- */
+.overlay-juego-inicio {
+  background: rgba(43, 43, 43, 0.85);
+  color: #ffffff;
+  border-radius: 0.5rem;
+}
+
+.overlay-juego-fin {
+  background: rgba(43, 43, 43, 0.9);
+  color: #ffffff;
+  border-radius: 0.5rem;
+}
+
+/* ---------- Boton flotante volver arriba ---------- */
+#btn-volver-arriba {
+  width: 48px;
+  height: 48px;
+}
+
+/* ---------- Imagen de fondo del hero, por pagina ---------- */
+/* Antes iban como "style" en el HTML; se movieron aca para que no haya
+   CSS dentro de los archivos HTML. */
+.hero-inicio {
+  background-image: url("../img/especies/monarca-hero.jpg");
+}
+
+.hero-especies {
+  background-image: url("../img/especies/papilio-machaon.jpg");
+}
+
+.hero-conocer {
+  background-image: url("../img/especies/monarca-alimentandose.jpg");
+}
+
+.hero-conservacion {
+  background-image: url("../img/galeria/planta-algodoncillo.jpg");
+}
+
+.hero-habitat {
+  background-image: url("../img/galeria/flores-nectar.jpg");
+}
+
+/* ---------- Anchos de lectura para parrafos centrados ---------- */
+.ancho-lectura {
+  max-width: 640px;
+}
+
+.ancho-lectura-chico {
+  max-width: 480px;
+}
+
+/* ---------- Alertas / destacados ---------- */
+.alert-mariposas {
+  background-color: #eef5ec;
+  border-left: 4px solid #2e5e3a;
+}
+
+/* ---------- Imagenes de tarjetas (card-img-top) ---------- */
+.img-tarjeta-220 {
+  height: 220px;
+  object-fit: cover;
+}
+
+.img-tarjeta-240 {
+  height: 240px;
+  object-fit: cover;
+}
+
+.img-tarjeta-260 {
+  height: 260px;
+  object-fit: cover;
 }
 
 /* ---------- Responsive ---------- */

@@ -73,20 +73,23 @@ revisión, no algo resuelto automáticamente por la IA.
 
 ```
 /aguirre-sabrina-trabajo-integrador
-|-- index.html
-|-- conocer.html, ciclo-de-vida.html, anatomia.html
-|-- especies.html, mariposa-monarca.html, mariposas-de-jardin.html
-|-- habitat-jardines.html, plantas-nutricias.html, observacion-responsable.html
-|-- galeria.html, conservacion.html, recursos.html
-|-- juego.html, contacto.html, datos-alumno.html
+|-- index.html, contacto.html, datos-alumno.html
+|-- conocer/index.html, ciclo-de-vida.html, anatomia.html
+|-- especies/index.html, mariposa-monarca.html, mariposas-de-jardin.html
+|-- habitat-jardines/index.html, plantas-nutricias.html, observacion-responsable.html
+|-- galeria/index.html
+|-- conservacion/index.html
+|-- recursos/index.html, juego.html
 |-- assets/css/custom.css
 |-- assets/js/main.js, form.js, gallery.js, game.js
-|-- assets/img/especies, assets/img/galeria, assets/img/iconos
+|-- assets/img/especies, assets/img/galeria
 |-- registro-desarrollo.md
 |-- README.md
-|-- Consigna TP Final 2025.pdf
 |-- Trabajo_Final_Mariposas_Informe_Proyecto_ACTUALIZADO.docx
 ```
+
+*(Nota: cada sección principal vive en su propia carpeta con su propio `index.html`, según el
+checklist del TP Final; ver el detalle de esta reestructuración más abajo.)*
 
 ## 8. Indicaciones para actualizaciones futuras
 

@@ -25,12 +25,9 @@ la raíz (`contacto.html`, `datos-alumno.html`) y el juego (`recursos/juego.html
 
 ## Documentación del proyecto
 
-- **Consigna**: `Consigna TP Final 2025.pdf`
 - **Informe de proyecto** (investigación, mapa de navegación, layout y diseño):
   `Trabajo_Final_Mariposas_Informe_Proyecto_ACTUALIZADO.docx`
 - **Registro de desarrollo y testeo** (incluye proceso de IA para el juego): `registro-desarrollo.md`
-- **Bitácora de la sesión de trabajo con IA** (proceso completo de construcción del sitio,
-  bugs encontrados y corregidos, decisiones tomadas): `bitacora-sesion-ia.md`
 
 ## Publicación online
 

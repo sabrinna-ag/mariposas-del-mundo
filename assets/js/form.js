@@ -97,7 +97,7 @@ function enviarPorMail(formulario) {
   const asuntoSeleccionado = formulario.asunto.options[formulario.asunto.selectedIndex].text;
   const mensaje = formulario.mensaje.value.trim();
 
-  const destinatario = "contacto.trabajofinal.mariposas@example.com";
+  const destinatario = "th_aguirre@outlook.com";
   const asunto = "Contacto sitio Mariposas: " + asuntoSeleccionado;
   const cuerpo =
     "Nombre: " + nombre + " " + apellido + "\n" +

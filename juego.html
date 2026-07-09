@@ -17,7 +17,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark navbar-mariposas sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html">🦋 Trabajo Final</a>
+      <a class="navbar-brand" href="index.html">🦋 Mariposas del Mundo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Abrir menú">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -67,16 +67,16 @@
             <div class="position-relative d-inline-block">
               <canvas id="canvas-juego" width="760" height="420"></canvas>
 
-              <div id="pantalla-inicio-juego" class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center p-3" style="background: rgba(43,43,43,0.85); color:#fff; border-radius:0.5rem;">
+              <div id="pantalla-inicio-juego" class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center p-3 overlay-juego-inicio">
                 <h2 class="h4 text-white">Ruta de la mariposa</h2>
                 <p class="mb-3">Movete con las flechas del teclado (o WASD) para recolectar flores<br>y esquivar pesticidas y ráfagas de viento.</p>
                 <button id="btn-comenzar-juego" class="btn btn-participar btn-lg">Comenzar</button>
               </div>
 
-              <div id="pantalla-fin-juego" class="position-absolute top-0 start-0 w-100 h-100 d-none flex-column align-items-center justify-content-center text-center p-3" style="background: rgba(43,43,43,0.9); color:#fff; border-radius:0.5rem;">
+              <div id="pantalla-fin-juego" class="position-absolute top-0 start-0 w-100 h-100 d-none flex-column align-items-center justify-content-center text-center p-3 overlay-juego-fin">
                 <h2 class="h4 text-white">Fin de la partida</h2>
                 <p id="resultado-final-juego" class="mb-2 fw-bold"></p>
-                <p id="mensaje-educativo-juego" class="mb-3" style="max-width: 480px;"></p>
+                <p id="mensaje-educativo-juego" class="mb-3 ancho-lectura-chico"></p>
                 <button id="btn-reiniciar-juego" class="btn btn-participar btn-lg">Jugar de nuevo</button>
               </div>
             </div>
@@ -146,7 +146,7 @@
     </div>
   </footer>
 
-  <button id="btn-volver-arriba" class="btn btn-participar rounded-circle d-none position-fixed bottom-0 end-0 m-4" style="width:48px;height:48px;" aria-label="Volver arriba">↑</button>
+  <button id="btn-volver-arriba" class="btn btn-participar rounded-circle d-none position-fixed bottom-0 end-0 m-4" aria-label="Volver arriba">↑</button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
